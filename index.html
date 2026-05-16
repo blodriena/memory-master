@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Memory Master — Card Flip Game</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+</head>
+<body>
+<div class="wrapper">
+ 
+<header>
+  <div class="logo">Memory<span>Master</span></div>
+  <div class="header-right">
+    <div class="level-badge" id="level-badge">Level 1</div>
+  </div>
+</header>
+ 
+<div id="level-progress"></div>
+ 
+<div id="theme-bar"></div>
+ 
+<div id="diff-row">
+  <button class="diff-btn active" onclick="setDiff(0)">Starter 4×3</button>
+  <button class="diff-btn" onclick="setDiff(1)">Easy 4×4</button>
+  <button class="diff-btn" onclick="setDiff(2)">Medium 5×4</button>
+  <button class="diff-btn" onclick="setDiff(3)">Hard 6×4</button>
+  <button class="diff-btn" onclick="setDiff(4)">Expert 6×5</button>
+  <button class="diff-btn" onclick="setDiff(5)">Master 6×6</button>
+</div>
+ 
+<div id="hud">
+  <div class="stat"><div class="stat-label">Score</div><div class="stat-val accent" id="s-score">0</div></div>
+  <div class="stat"><div class="stat-label">Pairs</div><div class="stat-val" id="s-pairs">0/0</div></div>
+  <div class="stat"><div class="stat-label">Moves</div><div class="stat-val" id="s-moves">0</div></div>
+  <div class="stat"><div class="stat-label">Combo</div><div class="stat-val warn" id="s-combo">×1</div></div>
+  <div class="stat"><div class="stat-label">Time</div><div class="stat-val" id="s-time">—</div></div>
+</div>
+ 
+<div id="bar-wrap"><div id="bar" style="width:100%"></div></div>
+ 
+<div id="pu-row">
+  <button class="pu" id="pu-peek" onclick="usePeek()"><span class="pu-icon">👁</span> Peek <span class="pu-count" id="pc-peek">2</span></button>
+  <button class="pu" id="pu-elim" onclick="useElim()"><span class="pu-icon">💥</span> Eliminate <span class="pu-count" id="pc-elim">1</span></button>
+  <button class="pu" id="pu-freeze" onclick="useFreeze()"><span class="pu-icon">❄️</span> Freeze <span class="pu-count" id="pc-freeze">1</span></button>
+  <button class="pu" id="pu-hint" onclick="useHint()"><span class="pu-icon">💡</span> Hint <span class="pu-count" id="pc-hint">2</span></button>
+</div>
+ 
+<div id="msg-row">
+  <div id="msg">Choose a theme and tap a card to begin!</div>
+  <div id="combo-badge"></div>
+</div>
+ 
+<div id="grid"></div>
+<button id="new-game-btn" onclick="newGame()">🔀 New Game</button>
+ 
+<footer>Memory Master — Match all pairs before time runs out</footer>
+</div>
+ 
+<div id="overlay">
+  <div id="modal">
+    <div class="modal-stars" id="m-stars"></div>
+    <div class="modal-title" id="m-title"></div>
+    <div class="modal-body" id="m-body"></div>
+    <button class="modal-btn" id="m-btn" onclick="modalAction()">Continue</button>
+    <button class="modal-sub-btn" onclick="newGame();closeModal()">New Game</button>
+  </div>
+</div>
+ 
+<script src="script.js"></script>
+</body>
+</html>
