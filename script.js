@@ -175,6 +175,9 @@ function drawShape(ctx, type, s, color, bg) {
  
   switch(type) {
 
+
+
+    
     case 'rocket':
       ctx.beginPath();
       ctx.moveTo(0,-s*1.1);ctx.bezierCurveTo(s*0.5,-s*0.5,s*0.5,s*0.2,s*0.4,s*0.7);
