@@ -173,11 +173,7 @@ function drawShape(ctx, type, s, color, bg) {
   ctx.lineCap = 'round';
   const lw = s*0.1;
  
-  switch(type) {
-
-
-
-    
+  switch(type) { 
     case 'rocket':
       ctx.beginPath();
       ctx.moveTo(0,-s*1.1);ctx.bezierCurveTo(s*0.5,-s*0.5,s*0.5,s*0.2,s*0.4,s*0.7);
