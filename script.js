@@ -172,7 +172,7 @@ function drawShape(ctx, type, s, color, bg) {
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
   const lw = s*0.1;
- 
+
   switch(type) { 
     case 'rocket':
       ctx.beginPath();
